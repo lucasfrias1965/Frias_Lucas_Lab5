@@ -24,11 +24,16 @@ class Lab5 {
              input_arr[i++] = Integer.parseInt(s);
         }
 
-        System.out.println(Arrays.toString(arr));
-        
+        System.out.println(Arrays.toString(input_arr));
+        int[] sized_input_arr = new int[i+1];
+        for (i = 0; i+1 < sized_input_arr.length; i++) sized_input_arr[i] = input_arr[i];
+
+        System.out.println(Arrays.toString(sized_input_arr));
+
+        int [] result = rec_sort(sized_input_arr); 
+
+        System.out.println(Arrays.toString(result));
                   
-
-
     }
 
     // Merges two integer arrays using Java Streams
@@ -52,14 +57,18 @@ class Lab5 {
             if (left_arr[left_arr.length-1] < right_arr[0]){
                 return mergeArraysUsingStreams(left_arr, right_arr);
             }
+
             if (right_arr[right_arr.length-1] < left_arr[0]){
                 return mergeArraysUsingStreams(right_arr, left_arr);
             }
+
+            int[] ret_arr = new int[left_arr.length + right_arr.length];
             
-            for (int i=j=0; j < left_arr.length != j || right_arr.length != i; ){
-                
+            for (int left_arr_i = 0, right_arr_i = 0, ret_arr_i = 0; left_arr.length != left_arr_i || right_arr.length != right_arr_i; ){
+                if (left_arr[left_arr_i] > right_arr[right_arr_i]) ret_arr[ret_arr_i++] = left_arr[left_arr_i++];
+                else ret_arr[ret_arr_i++] = right_arr[right_arr_i++];
             }
-             
+            return ret_arr; 
 
     }
 
