@@ -15,4 +15,20 @@ KU Cycle Server:
     ```
     and you're good to go
 
-Windows
+Windows:
+    Go and install the JDK, and then either by right click operation or
+    ```
+    java main.java
+    ```
+    run the file
+MacOS:
+    Install java with homebrew
+    ```
+    brew install openjdk
+    ```
+    And then 
+    ```
+    java main.java
+    ```
+Linux:
+    Use your favorite package manager of choice, I'd still recommend openjdfk
